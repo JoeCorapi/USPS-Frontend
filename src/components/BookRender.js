@@ -6,11 +6,13 @@ import PropTypes from 'prop-types';
 const BookRender = ({ bookData }) => {
 
     function createBookRow(book){
+        console.log(book.name);
         return (
-            <tr key={book.book_id}>
-                <td> {book.book_id} </td>
-                <td> {book.title} </td>
-                <td> {book.author} </td>
+            <tr key={book.name}>
+                <td> {book.name} </td>
+                <td> {book.id} </td>
+                <td> {book.type} </td>
+                <td> {book.createdon} </td>
             </tr>
         );
     }
@@ -33,9 +35,10 @@ const BookRender = ({ bookData }) => {
             (<table className="table">
                 <thead>
                     <tr>
+                        <th>Name</th>
                         <th>ID</th>
-                        <th>Title</th>
-                        <th>Author</th>
+                        <th>Type</th>
+                        <th>Created On</th>
                     </tr>
                 </thead>
                 <tbody>
