@@ -7,7 +7,12 @@ export const readBooks = () => {
   return dispatch => {
       dispatch(_readBookStarted());
 
-      return axios.get(`http://www.mocky.io/v2/5daca80c30000092002987ad`)
+      return axios.get(`https://localhost:44368/api/Application`, {
+          headers: {
+              'Content-Type': 'application/json',
+             // 'Access-Control-Allow-Origin': '*'
+          }
+      })
       .then(res => {
           dispatch(_readBookSuccess(res));
       })
